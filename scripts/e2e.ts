@@ -6,7 +6,7 @@ const client = makeClient();
 const net = await readNetwork(client);
 const nodes = process.argv.slice(2) as Address[];
 const r = 0.03; // illustrative yield, user input in the real tool
-const V = net.megapoolValidatorCount;
+const V = net.megapoolValidatorsStakedEstimate; // validators ever added minus those still queued
 const network = {
   megapoolValidators: V,
   networkBorrowedEth: V * 28, // approximation: every counted validator at 4 ETH bond

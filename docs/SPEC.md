@@ -139,7 +139,7 @@ Contract addresses are resolved through RocketStorage (`0x1d8f8f00cfa6758d7bE783
 - Minipool: `getNodeFee`, `getNodeDepositBalance`, `getStatus`, `getFinalised`
 - Node staking: `getNodeStakedRPL`, `getNodeLegacyStakedRPL`, `getNodeMegapoolStakedRPL`, `getTotalMegapoolStakedRPL`
 - Network: `getRPLPrice`, `getCurrentNodeShare`, `getCurrentVoterShare`
-- Megapool manager: `getValidatorCount` (counts every validator added, whatever its status)
+- Megapool manager: `getValidatorCount` (counts every validator ever added, including ones still in the queue). The tool subtracts the queue lengths to estimate how many are staked. Exited and dissolved validators are not subtracted, so the estimate can run a little high.
 - Deposit pool: `getExpressQueueLength`, `getStandardQueueLength`, `getQueueIndex`, and `FundsAssigned` events
 - Settings: `getBaseBondArray`, `getReducedBond`, `getExpressQueueRate`
 

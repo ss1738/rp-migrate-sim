@@ -102,7 +102,8 @@ export async function readNodeRpl(client: PublicClient, node: Address): Promise<
 
 export interface NetworkSnapshot {
   rplEthPrice: number;
-  megapoolValidatorCount: number; // all added validators, any status (approximation of V)
+  megapoolValidatorCount: number; // every validator ever added, including queued ones
+  megapoolValidatorsStakedEstimate: number; // count minus validators still waiting in the queues
   totalMegapoolStakedRpl: number;
   nodeShare: number;
   voterShare: number;
@@ -138,6 +139,7 @@ export async function readNetwork(client: PublicClient): Promise<NetworkSnapshot
   return {
     rplEthPrice: toEth(price),
     megapoolValidatorCount: Number(v),
+    megapoolValidatorsStakedEstimate: Math.max(0, Number(v) - Number(expLen) - Number(stdLen)),
     totalMegapoolStakedRpl: toEth(totalMp),
     nodeShare: toEth(nodeShare),
     voterShare: toEth(voterShare),

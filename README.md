@@ -56,7 +56,7 @@ node scripts/queue.ts 30              # queue wait from a 30 day measured rate
 
 - Legacy RPL rewards are not modelled. You can enter them by hand.
 - The voter-eligible stake across the network is an upper bound, because there is no single on-chain figure for it. Voter income can be understated.
-- The number of megapool validators counts every validator added, whatever its status.
+- The number of staked megapool validators is an estimate: every validator ever added, minus those still in the queues. Exited and dissolved ones are not removed, so it can run a little high.
 - Assignments per day depends on ETH arriving, so any single measurement can be off.
 - The tool does not check how many express tickets a node still holds.
 - Draft and Review RPIPs can change.

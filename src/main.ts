@@ -159,7 +159,7 @@ function runFor(perDay: number): { res: MigrationResult; queueDays: number } {
   const queueDays = queueWaitDays(a, perDay);
   const mode = $<HTMLSelectElement>('rplmode').value;
   const stakedRpl = mode === 'legacy' ? l.rpl.legacyStaked : mode === 'custom' ? Number($<HTMLInputElement>('rplcustom').value) || 0 : 0;
-  const V = l.net.megapoolValidatorCount;
+  const V = l.net.megapoolValidatorsStakedEstimate;
   const res = evaluateMigration({
     r: (Number($<HTMLInputElement>('r').value) || 0) / 100,
     rplEthPrice: l.net.rplEthPrice,
