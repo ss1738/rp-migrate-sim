@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/ss1738/rp-migrate-sim/issues"
   },
-  "homepage": "https://github.com/ss1738/rp-migrate-sim#readme",
+  "homepage": "https://ss1738.github.io/rp-migrate-sim/",
   "engines": {
     "node": ">=22"
   },

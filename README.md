@@ -1,5 +1,7 @@
 # rp-migrate-sim
 
+Live page: https://ss1738.github.io/rp-migrate-sim/
+
 A read-only calculator for Rocket Pool node operators who run legacy minipools. It answers one question: if I exit and run 4 ETH megapool validators instead, do I earn more, and how long until the move pays back?
 
 You paste a node address. The page reads your active minipools and the live deposit queue straight from the contracts, then shows the result under three queue speeds. It never asks for a wallet and never sends a transaction.
